@@ -36,7 +36,7 @@ module Dockerize
             FileUtils.mkdir project_name
 
             puts "Copy template files..."
-            template_dir = Dir.glob(File.expand_path(File.dirname(__FILE__) + "/templates/rails/#{db_name}/*"))
+            template_dir = Dir.glob(File.expand_path(File.dirname(__FILE__) + "/template/rails/#{db_name}/*"))
             FileUtils.cp_r(template_dir, project_dir)
 
             puts "Initializing rails application..."
