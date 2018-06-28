@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
 
   spec.summary       = %q{Create dockerized rails apps}
   spec.description   = %q{Generates a docker-compose file with rails app and given database}
-  spec.homepage      = "https://github.com/AntonBozhinov/dockerize-rails"
+  spec.homepage      = "https://github.com/AntonBozhinov/dockerize"
   spec.license       = "MIT"
 
 
@@ -19,7 +19,7 @@ Gem::Specification.new do |spec|
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
   spec.files         = `git ls-files`.split("\n")
   spec.bindir        = "exe"
-  spec.executables   = ["dockerize-rails"]
+  spec.executables   = ["dockerize"]
   spec.require_paths = ["lib"]
 
   spec.add_development_dependency "bundler", "~> 1.16"
