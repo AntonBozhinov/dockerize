@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "dockerize_rails"
+require "dockerize"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure

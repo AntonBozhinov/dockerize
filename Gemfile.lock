@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    dockerize_rails (0.1.0)
+    dockerize (0.1.0)
       thor
 
 GEM
@@ -29,7 +29,7 @@ PLATFORMS
 
 DEPENDENCIES
   bundler (~> 1.16)
-  dockerize_rails!
+  dockerize!
   rake (~> 10.0)
   rspec (~> 3.0)
 

@@ -1,11 +1,11 @@
 
 lib = File.expand_path("../lib", __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require "dockerize_rails/version"
+require "dockerize/version"
 
 Gem::Specification.new do |spec|
-  spec.name          = "dockerize_rails"
-  spec.version       = DockerizeRails::VERSION
+  spec.name          = "dockerize"
+  spec.version       = Dockerize::VERSION
   spec.authors       = ["Anton Bozhinov"]
   spec.email         = ["anton.bozhinov@gmail.com"]
 

@@ -1,0 +1,4 @@
+#!/usr/bin/env ruby
+
+require 'dockerize/cli'
+Dockerize::Cli.start

@@ -1,3 +1,3 @@
-module DockerizeRails
+module Dockerize
   VERSION = "0.1.0"
 end

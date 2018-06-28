@@ -1,6 +1,6 @@
 require 'thor'
 
-module DockerizeRails
+module Dockerize
     class Cli < Thor
         desc "with DB_NAME", "Generates a docker-compose rails app with given database"
         def with db_name
