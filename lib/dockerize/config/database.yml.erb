@@ -15,11 +15,11 @@
 # gem 'pg'
 #
 default: &default
-  adapter: <%= db_type %>
+  adapter: <%= @db_type %>
   encoding: unicode
   host: db
-  username: <%= db_username %>
-  password: <%= db_password %>
+  username: <%= @db_username %>
+  password: <%= @db_password %>
   # For details on connection pooling, see Rails configuration guide
   # http://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
