@@ -39,12 +39,14 @@ module Dockerize
             template_dir = Dir.glob(File.expand_path(File.dirname(__FILE__) + "/template/rails/#{db_name}/*"))
             FileUtils.cp_r(template_dir, project_dir)
 
+            config_dir = File.expand_path("#{File.dirname(__FILE__)}/config/database.yml.erb")
+            puts "Database config found at #{config_dir}"
             puts "Initializing rails application..."
-            Dir.chdir(project_dir) do 
-                puts "Currently in #{Dir.pwd}"
-                system "docker-compose run web rails new . --force -T --database=#{db_name}"
-                system "docker-compose build"
-            end
+            # Dir.chdir(project_dir) do 
+            #     puts "Currently in #{Dir.pwd}"
+            #     system "docker-compose run web rails new . --force -T --database=#{db_name}"
+            #     system "docker-compose build"
+            # end
         end
     end
 end
