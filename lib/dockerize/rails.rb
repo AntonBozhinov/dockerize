@@ -9,7 +9,9 @@ module Dockerize
         to a given database.
         Example:
         $ dockerize rails with postgresql
-     
+        
+        Supported dbs:
+            - postgresql
         > from: Anton Bozhinov
         LONGDESC
         option :name
@@ -34,8 +36,15 @@ module Dockerize
             FileUtils.mkdir project_name
 
             puts "Copy template files..."
-            template_dir = File.expand_path(File.dirname(__FILE__) + "/templates/rails/#{db_name}")
+            template_dir = Dir.glob(File.expand_path(File.dirname(__FILE__) + "/templates/rails/#{db_name}/*"))
             FileUtils.cp_r(template_dir, project_dir)
+
+            puts "Initializing rails application..."
+            Dir.chdir(project_dir) do 
+                puts "Currently in #{Dir.pwd}"
+                system "docker-compose run web rails new . --force -T --database=#{db_name}"
+                system "docker-compose build"
+            end
         end
     end
 end
