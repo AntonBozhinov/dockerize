@@ -55,7 +55,7 @@ module Dockerize
             template_dir = Dir.glob(File.expand_path(File.dirname(__FILE__) + "/template/rails/common/*"))
             FileUtils.cp_r(template_dir, project_dir)
 
-            docker_compose_dir = File.expand_path("#{File.dirname(__FILE__)}/#{@db_type}/database.yml.erb")
+            docker_compose_dir = File.expand_path("#{File.dirname(__FILE__)}/template/rails/#{@db_type}/docker-compose.yml.erb")
             config_dir = File.expand_path("#{File.dirname(__FILE__)}/config/database.yml.erb")
 
             puts "docker-compose file found at #{docker_compose_dir}"
