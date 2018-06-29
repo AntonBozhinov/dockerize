@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Anton Bozhinov"]
   spec.email         = ["anton.bozhinov@gmail.com"]
 
-  spec.summary       = %q{Create dockerized rails apps}
-  spec.description   = %q{Generates a docker-compose file with rails app and given database}
+  spec.summary       = %q{Create dockerized apps}
+  spec.description   = %q{Generates a docker-compose file with app and given database}
   spec.homepage      = "https://github.com/AntonBozhinov/dockerize"
   spec.license       = "MIT"
 
