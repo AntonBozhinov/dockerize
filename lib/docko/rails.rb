@@ -2,14 +2,14 @@ require 'thor'
 require 'fileutils'
 require 'erb'
 
-module Dockerize
+module Docko
     class Rails < Thor
         desc "with <db_type>", "Creates docker-compose rails app with given database type"
         long_desc <<-LONGDESC
          will generate ruby on rails application and will connect it
         to a given database.
         Example:
-        $ dockerize rails with postgresql
+        $ docko rails with postgresql
         
         Supported dbs:
             - postgresql

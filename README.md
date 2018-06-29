@@ -1,6 +1,6 @@
-# Dockerize
+# Docko
 
-Dockerize is a ruby gem for generating applications inside docker containers.
+Docko is a ruby gem for generating applications inside docker containers with docker-compose.
 
 
 ## Installation
@@ -8,7 +8,7 @@ Dockerize is a ruby gem for generating applications inside docker containers.
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'dockerize'
+gem 'docko'
 ```
 
 And then execute:
@@ -17,17 +17,17 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install dockerize
+    $ gem install docko
 
 ## Usage
 
-    $ dockerize /module/ with /db_name/
+    $ docko /module/ with /db_name/
 
 ## Example
-    $ dockerize rails with postgresql
+    $ docko rails with postgresql
 
 #### See all available options
-    $ dockerize
+    $ docko
 
 ## Development
 
@@ -37,7 +37,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/dockerize. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/docko. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -45,4 +45,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Dockerize project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/dockerize/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Docko project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/docko/blob/master/CODE_OF_CONDUCT.md).

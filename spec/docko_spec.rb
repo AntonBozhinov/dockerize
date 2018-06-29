@@ -1,6 +1,6 @@
-RSpec.describe Dockerize do
+RSpec.describe Docko do
   it "has a version number" do
-    expect(Dockerize::VERSION).not_to be nil
+    expect(Docko::VERSION).not_to be nil
   end
 
   it "does something useful" do

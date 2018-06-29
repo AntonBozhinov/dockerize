@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
 
-require 'dockerize/cli'
-Dockerize::Cli.start
+require 'docko/cli'
+Docko::Cli.start
