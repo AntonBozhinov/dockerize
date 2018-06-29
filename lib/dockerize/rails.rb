@@ -52,10 +52,22 @@ module Dockerize
             FileUtils.mkdir @project_name
 
             puts "Copy template files..."
-            template_dir = Dir.glob(File.expand_path(File.dirname(__FILE__) + "/template/rails/#{@db_type}/*"))
+            template_dir = Dir.glob(File.expand_path(File.dirname(__FILE__) + "/template/rails/common/*"))
             FileUtils.cp_r(template_dir, project_dir)
 
+            docker_compose_dir = File.expand_path("#{File.dirname(__FILE__)}/#{@db_type}/database.yml.erb")
             config_dir = File.expand_path("#{File.dirname(__FILE__)}/config/database.yml.erb")
+
+            puts "docker-compose file found at #{docker_compose_dir}"
+            docker_compose_file = File.read(docker_compose_dir)
+            docker_compose_renderer = ERB.new(docker_compose_file)
+            docker_compose_output = docker_compose_renderer.result(binding)
+            File.open("#{project_dir}/docker-compose.yml", "w") do |f|
+                f.write(docker_compose_output)
+                f.close()
+            end
+            puts "docker-compose file added successfuly"
+
             puts "Database config found at #{config_dir}"
             config_file = File.read(config_dir)
             renderer = ERB.new(config_file)
