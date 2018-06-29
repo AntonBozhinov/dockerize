@@ -1,6 +1,6 @@
-# Docko
+# Dockerizer
 
-Docko is a ruby gem for generating applications inside docker containers with docker-compose.
+Dockerizer is a ruby gem for generating applications inside docker containers with docker-compose.
 
 
 ## Installation
@@ -8,7 +8,7 @@ Docko is a ruby gem for generating applications inside docker containers with do
 Add this line to your application's Gemfile:
 
 ```ruby
-gem 'docko'
+gem 'dockerizer'
 ```
 
 And then execute:
@@ -17,17 +17,17 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install docko
+    $ gem install dockerizer
 
 ## Usage
 
-    $ docko /module/ with /db_name/
+    $ dockerizer /module/ with /db_name/
 
 ## Example
-    $ docko rails with postgresql
+    $ dockerizer rails with postgresql
 
 #### See all available options
-    $ docko
+    $ dockerizer
 
 ## Development
 
@@ -37,7 +37,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/docko. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/dockerizer. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
@@ -45,4 +45,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Docko project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/docko/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Dockerizer project’s codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/dockerizer/blob/master/CODE_OF_CONDUCT.md).

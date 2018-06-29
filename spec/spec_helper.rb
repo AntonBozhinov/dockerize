@@ -1,5 +1,5 @@
 require "bundler/setup"
-require "docko"
+require "dockerizer"
 
 RSpec.configure do |config|
   # Enable flags like --only-failures and --next-failure
