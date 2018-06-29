@@ -4,7 +4,7 @@ require 'erb'
 
 module Dockerize
     class Rails < Thor
-        desc "with <db_type>", "Creates docker-compose rails app with given database name"
+        desc "with <db_type>", "Creates docker-compose rails app with given database type"
         long_desc <<-LONGDESC
          will generate ruby on rails application and will connect it
         to a given database.
@@ -20,6 +20,12 @@ module Dockerize
         option :db_password
         def with(db_type)
             @db_type = db_type
+            valid_db_types = ["postgresql"]
+            unless valid_db_types.include?(@db_type)
+                puts "Invalid db type #{@db_type}. Valid types are #{valid_db_types}"
+                exit!
+            end
+
             if options[:name]
                 @project_name = options[:name]
             else
@@ -86,4 +92,3 @@ module Dockerize
         end
     end
 end
-
