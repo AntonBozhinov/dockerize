@@ -1,9 +1,10 @@
 require 'thor'
 require 'fileutils'
 require 'erb'
+require_relative 'application'
 
 module Dockerizer
-    class Rails < Thor
+    class Rails < Application
         desc "with <db_type>", "Creates docker-compose rails app with given database type"
         long_desc <<-LONGDESC
          will generate ruby on rails application and will connect it
@@ -62,7 +63,7 @@ module Dockerizer
             FileUtils.cp_r(template_dir, project_dir)
 
             docker_compose_dir = File.expand_path("#{File.dirname(__FILE__)}/template/rails/#{@db_type}/docker-compose.yml.erb")
-            config_dir = File.expand_path("#{File.dirname(__FILE__)}/config/database.yml.erb")
+            config_dir = File.expand_path("#{File.dirname(__FILE__)}/config/rails/database.yml.erb")
 
             puts "docker-compose file found at #{docker_compose_dir}"
             docker_compose_file = File.read(docker_compose_dir)
