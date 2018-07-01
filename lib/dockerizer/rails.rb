@@ -1,10 +1,9 @@
 require 'thor'
 require 'fileutils'
 require 'erb'
-require_relative 'application'
 
 module Dockerizer
-    class Rails < Application
+    class Rails < Thor
         desc "with <db_type>", "Creates docker-compose rails app with given database type"
         long_desc <<-LONGDESC
          will generate ruby on rails application and will connect it
