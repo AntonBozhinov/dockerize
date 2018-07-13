@@ -18,6 +18,7 @@ module Dockerizer
         option :name
         option :db_username
         option :db_password
+        option :api, :type => :boolean
         def with(db_type)
             @db_type = db_type
             valid_db_types = ["postgresql"]
@@ -78,11 +79,13 @@ module Dockerizer
             config_file = File.read(config_dir)
             renderer = ERB.new(config_file)
             config_output = renderer.result(binding)
+            
+            is_api = options[:api] ? '--api' : ''
 
             puts "Initializing rails application..."
             Dir.chdir(project_dir) do 
                 puts "Currently in #{Dir.pwd}"
-                system "docker-compose run web rails new . --force -T --database=#{db_type}"
+                system "docker-compose run web rails new . --force -T --database=#{db_type} " + is_api
                 system "docker-compose build"
                 File.open("config/database.yml", "w") do |f|
                     f.write(config_output)
